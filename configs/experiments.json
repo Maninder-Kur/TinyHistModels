@@ -1,0 +1,569 @@
+[
+  {
+    "cohort": "her2",
+    "paper_model": "EfficientNet-B0",
+    "config": "configs/her2/effnet.json",
+    "entrypoint": "code_model_training/main2.py",
+    "source_run": "result_2026-02-13_17-57-55",
+    "source_experiment_sha256": "bc261161a14f798c300fbef0aa03fa037d5a9b2fd921b32cfde79039d5b5e2b8",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "her2",
+    "paper_model": "ST-Net",
+    "config": "configs/her2/stnet.json",
+    "entrypoint": "code_model_training/main2.py",
+    "source_run": "result_2026-02-13_18-06-03",
+    "source_experiment_sha256": "c200f2d4974a6643bab6cf902ff7fadea626bf5e6549bc590bdc0af1b705fd68",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "her2",
+    "paper_model": "DeepSpaCE",
+    "config": "configs/her2/deepspace.json",
+    "entrypoint": "code_model_training/main2.py",
+    "source_run": "result_2026-02-15_22-27-05",
+    "source_experiment_sha256": "898c338e477da9249a6e73a1776207136ccc3a7c2b5f429c7e9e36c1e288a6de",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "her2",
+    "paper_model": "HisToGene",
+    "config": "configs/her2/histogene.json",
+    "entrypoint": "code_model_training/main2.py",
+    "source_run": "result_2026-02-06_01-01-24",
+    "source_experiment_sha256": "d461058efecaa7e55ff519c1a92712f939d5ea30664931e59e8461946294679f",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "her2",
+    "paper_model": "TCGN",
+    "config": "configs/her2/tcgn.json",
+    "entrypoint": "code_model_training/main2.py",
+    "source_run": "result_2026-02-06_14-58-31",
+    "source_experiment_sha256": "66dd5f229f10dd2376b70fa41f7e1c783c98e35f2d0e2428641c567bcd698367",
+    "status": "archived configuration; current training source",
+    "recovered_architecture": {
+      "embed_dims": [
+        52,
+        104,
+        208,
+        416
+      ],
+      "evidence": "Original HER2 TCGN fold_1/best_model.pth patch_embed_{a,b,c,d}.proj.weight shapes; reproduces 25138985 trainable parameters."
+    }
+  },
+  {
+    "cohort": "her2",
+    "paper_model": "THItoGene",
+    "config": "configs/her2/thitogene.json",
+    "entrypoint": "code_model_training/main2_thi_her2.py",
+    "source_run": "result_2026-02-24_09-47-17",
+    "source_experiment_sha256": "2df7534977a41087de60fe1480261497e2a22cb987e72aa7b57319263b684659",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "her2",
+    "paper_model": "UNI",
+    "config": "configs/her2/uni.json",
+    "entrypoint": "code_model_training/main2.py",
+    "source_run": "result_2026-05-16_00-12-03",
+    "source_experiment_sha256": "8f093783b887debb79241aae8c5161cf988a13e286d3e4cb0853d62f88d2bac5",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "her2",
+    "paper_model": "STpath",
+    "config": "configs/her2/stpath.json",
+    "entrypoint": "code_model_training/main2.py",
+    "source_run": "result_2026-06-11_20-23-22",
+    "source_experiment_sha256": "b21e893a7d42e387fb8fcbe70ceccf93a62a80407cb5e57d1e0ba703c8af3ac8",
+    "status": "reconstructed STPath adapter; historical trainer missing"
+  },
+  {
+    "cohort": "her2",
+    "paper_model": "Stem",
+    "config": "configs/her2/stem.json",
+    "entrypoint": "code_model_training/stem_visium_patient.py",
+    "source_run": "result_2026-08-20_23-26-12",
+    "source_experiment_sha256": "072346bf6dad311e1e4fb9692d8578429837645053783826cf86288151b7b231",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "her2",
+    "paper_model": "EffNet-C",
+    "config": "configs/her2/effnet_kd.json",
+    "entrypoint": "code_model_training/main2_kd.py",
+    "source_run": "result_2026-04-28_15-52-16",
+    "source_experiment_sha256": "abae31aa1ad79ce353d13da1ecca3d8ff5310f8fd4ea59747c5ba487b662d8dc",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "her2",
+    "paper_model": "ST-Net-C",
+    "config": "configs/her2/stnet_kd.json",
+    "entrypoint": "code_model_training/main2_kd.py",
+    "source_run": "result_2026-04-14_16-51-13",
+    "source_experiment_sha256": "6e26807cc369aec86def2f1d6586127ba18b3e0de0cda367e8a5d76f5cd0aa6f",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "her2",
+    "paper_model": "HisToGene-C",
+    "config": "configs/her2/histogene_kd.json",
+    "entrypoint": "code_model_training/main2_kd.py",
+    "source_run": "result_2026-04-13_18-50-26",
+    "source_experiment_sha256": "5f6c713bd7d3cc0e8579c8ae9a75f7f8fa5b0ac74e2aacc2ef28d96a6f4e607f",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "hist2st",
+    "paper_model": "EfficientNet-B0",
+    "config": "configs/hist2st/effnet.json",
+    "entrypoint": "code_model_training/main2.py",
+    "source_run": "result_2026-02-14_11-38-19",
+    "source_experiment_sha256": "503adcb853080b1455723b046a7cbcce1ba9df033aa4a187bc9104642578680d",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "hist2st",
+    "paper_model": "ST-Net",
+    "config": "configs/hist2st/stnet.json",
+    "entrypoint": "code_model_training/main2.py",
+    "source_run": "result_2026-02-15_07-17-53",
+    "source_experiment_sha256": "afaa1753782886fc588d696e08b9f8a3eb4a2a36b98b04af75af20bafc625a61",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "hist2st",
+    "paper_model": "DeepSpaCE",
+    "config": "configs/hist2st/deepspace.json",
+    "entrypoint": "code_model_training/main2.py",
+    "source_run": "result_2026-02-14_20-16-17",
+    "source_experiment_sha256": "3498e08ef27b71bf7631a0837bc86fd20d0832882ca73591a4f68e5f0d288d8f",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "hist2st",
+    "paper_model": "HisToGene",
+    "config": "configs/hist2st/histogene.json",
+    "entrypoint": "code_model_training/main2.py",
+    "source_run": "result_2026-02-10_12-41-45",
+    "source_experiment_sha256": "038e578d0dfb0d51eeaf221bd42b30254903e2d48f3f857350e09a3e7920d947",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "hist2st",
+    "paper_model": "TCGN",
+    "config": "configs/hist2st/tcgn.json",
+    "entrypoint": "code_model_training/main2.py",
+    "source_run": "result_2026-02-09_19-32-40",
+    "source_experiment_sha256": "a9fcef1a2f007ea91e3f2ab295b3d1ad87b902fb3fd59ff0a814adbc2ebf424e",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "hist2st",
+    "paper_model": "THItoGene",
+    "config": "configs/hist2st/thitogene.json",
+    "entrypoint": "code_model_training/main2_thi_hist2st.py",
+    "source_run": "result_2026-02-24_09-20-10",
+    "source_experiment_sha256": "7782904764944414383496f3f193545382b91535c0af47b86abe3ffbaa230ff3",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "hist2st",
+    "paper_model": "UNI",
+    "config": "configs/hist2st/uni.json",
+    "entrypoint": "code_model_training/main2.py",
+    "source_run": "result_2026-05-16_18-55-34",
+    "source_experiment_sha256": "ce589f13d369d386861ebfcc92a877038255c02d7c885e94b006654b6231186d",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "hist2st",
+    "paper_model": "STpath",
+    "config": "configs/hist2st/stpath.json",
+    "entrypoint": "code_model_training/main2.py",
+    "source_run": "result_2026-06-14_20-44-49",
+    "source_experiment_sha256": "5647a76b05d6f317faac64c4697bc4c315c1c31302fa3363df3e22fbca5320d6",
+    "status": "reconstructed STPath adapter; historical trainer missing"
+  },
+  {
+    "cohort": "hist2st",
+    "paper_model": "Stem",
+    "config": "configs/hist2st/stem.json",
+    "entrypoint": "code_model_training/stem_visium_patient.py",
+    "source_run": "result_vit_2026-08-30_18-30-18",
+    "source_experiment_sha256": "9b8d84d0124c5aaeb77c9743616a75d6bf475fab99efe224ed497aeb81762a44",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "hist2st",
+    "paper_model": "EffNet-C",
+    "config": "configs/hist2st/effnet_kd.json",
+    "entrypoint": "code_model_training/main2_kd.py",
+    "source_run": "result_2026-04-28_15-41-32",
+    "source_experiment_sha256": "f84cc1ca6e74ff1f90881bce3eb2e31ebcfa9256d538248b17646ee2e561f1d3",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "hist2st",
+    "paper_model": "ST-Net-C",
+    "config": "configs/hist2st/stnet_kd.json",
+    "entrypoint": "code_model_training/main2_kd.py",
+    "source_run": "result_2026-04-14_16-43-55",
+    "source_experiment_sha256": "e5209a3436c1321f41aec4da2ea0e56b132de79a8cb7b3a1e1dbb5a0c2fce0b4",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "hist2st",
+    "paper_model": "HisToGene-C",
+    "config": "configs/hist2st/histogene_kd.json",
+    "entrypoint": "code_model_training/main2_kd.py",
+    "source_run": "result_2026-04-14_05-00-28",
+    "source_experiment_sha256": "b1c4e9bc761d72781f4ea6a81b179ab956a82918be4fea152cf462049f7c9d03",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "xenium_breast",
+    "paper_model": "EfficientNet-B0",
+    "config": "configs/xenium_breast/effnet.json",
+    "entrypoint": "code_model_training/main2_xenium_patient.py",
+    "source_run": "result_vit_2026-07-17_18-54-47",
+    "source_experiment_sha256": "f49708367ef56482fc80ed176556356c2a6cc35c2ac30e64ab12d453db35aec9",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "xenium_breast",
+    "paper_model": "ST-Net",
+    "config": "configs/xenium_breast/stnet.json",
+    "entrypoint": "code_model_training/main2_xenium_patient.py",
+    "source_run": "result_vit_2026-07-17_19-05-53",
+    "source_experiment_sha256": "45a77049a2dd9ea50b0932a9e9aaa007dfacac1049b9eacc2539692f55fc69d3",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "xenium_breast",
+    "paper_model": "DeepSpaCE",
+    "config": "configs/xenium_breast/deepspace.json",
+    "entrypoint": "code_model_training/main2_xenium_patient.py",
+    "source_run": "result_vit_2026-07-18_13-28-28",
+    "source_experiment_sha256": "b124e6a801fa9f941209d221064ebcbd766aa80763c7b51cb920cf1c33b4ed22",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "xenium_breast",
+    "paper_model": "HisToGene",
+    "config": "configs/xenium_breast/histogene.json",
+    "entrypoint": "code_model_training/main2_xenium_patient.py",
+    "source_run": "result_vit_2026-07-18_17-07-09",
+    "source_experiment_sha256": "15abd0979252a3ee7cdecff76c1e49db589639d955a319f38a9436ec0d53a1fd",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "xenium_breast",
+    "paper_model": "TCGN",
+    "config": "configs/xenium_breast/tcgn.json",
+    "entrypoint": "code_model_training/main2_xenium_patient.py",
+    "source_run": "result_vit_2026-07-25_00-58-31",
+    "source_experiment_sha256": "b01ad268e68b6af0d5923f5e85d8db55be2e0c3a63265a0715654164e9cf37da",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "xenium_breast",
+    "paper_model": "UNI",
+    "config": "configs/xenium_breast/uni.json",
+    "entrypoint": "code_model_training/main2_xenium_patient.py",
+    "source_run": "result_vit_2026-07-20_21-13-16",
+    "source_experiment_sha256": "455b831560be1b064d3fbc6f5ed1438db130ccfb3b194c0da207cc776acbe1e5",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "xenium_breast",
+    "paper_model": "STpath",
+    "config": "configs/xenium_breast/stpath.json",
+    "entrypoint": "code_model_training/main2_xenium_patient.py",
+    "source_run": "result_vit_2026-08-07_16-51-27",
+    "source_experiment_sha256": "d8fbe84d7cc6dcfcbeeaa2c91520991c12972ed0f501c13e964c9c31c331cb73",
+    "status": "reconstructed STPath adapter; historical trainer missing"
+  },
+  {
+    "cohort": "xenium_breast",
+    "paper_model": "Stem",
+    "config": "configs/xenium_breast/stem.json",
+    "entrypoint": "code_model_training/stem_xenium_patient.py",
+    "source_run": "result_vit_2026-08-04_08-13-49",
+    "source_experiment_sha256": "cd0a8054b1065fa924c9987d3eb60c9082ad6ccf4c202bbbd475b2aacb2b6759",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "xenium_breast",
+    "paper_model": "EffNet-C",
+    "config": "configs/xenium_breast/effnet_kd.json",
+    "entrypoint": "code_model_training/main2_xenium_patient_kd.py",
+    "source_run": "result_vit_2026-07-22_02-13-32",
+    "source_experiment_sha256": "d2cc4f707250914062a8ef2a000f534a93201e95d6012be7b66b66b3229f71ca",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "xenium_breast",
+    "paper_model": "ST-Net-C",
+    "config": "configs/xenium_breast/stnet_kd.json",
+    "entrypoint": "code_model_training/main2_xenium_patient_kd.py",
+    "source_run": "result_vit_2026-07-22_21-53-34",
+    "source_experiment_sha256": "21a21ec5a87aa317ffbc7ede98a6014f1d5db5d23ec7ae39c6f13b50cba7990b",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "xenium_breast",
+    "paper_model": "HisToGene-C",
+    "config": "configs/xenium_breast/histogene_kd.json",
+    "entrypoint": "code_model_training/main2_xenium_patient_kd.py",
+    "source_run": "result_vit_2026-07-22_16-45-48",
+    "source_experiment_sha256": "0067fef6604f35041fc78b585306c8f210dca118fb578cf677ba96a92baf2813",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "xenium_breast",
+    "paper_model": "EffNet-3",
+    "config": "configs/xenium_breast/effnet_3.json",
+    "entrypoint": "code_model_training/main2_xenium_patient.py",
+    "source_run": "result_vit_2026-07-20_01-46-20",
+    "source_experiment_sha256": "440895870629a8f8c9d1403fe24a971c618455dbd6bdb779bfe07ebb9dc728da",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "xenium_breast",
+    "paper_model": "EffNet-5",
+    "config": "configs/xenium_breast/effnet_5.json",
+    "entrypoint": "code_model_training/main2_xenium_patient.py",
+    "source_run": "result_vit_2026-07-20_12-31-14",
+    "source_experiment_sha256": "86140e549cfe1c1b6ae6baa64446d27c21f9a57cdfda32eddbff5c9f726a1d75",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "xenium_breast",
+    "paper_model": "EffNet-10",
+    "config": "configs/xenium_breast/effnet_10.json",
+    "entrypoint": "code_model_training/main2_xenium_patient.py",
+    "source_run": "result_vit_2026-07-20_19-45-17",
+    "source_experiment_sha256": "8affcd6267568c8018faae1700059f4339dab7e513cc28e5a14e2aba41a84cb0",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "xenium_breast",
+    "paper_model": "EffNet-20",
+    "config": "configs/xenium_breast/effnet_20.json",
+    "entrypoint": "code_model_training/main2_xenium_patient.py",
+    "source_run": "result_vit_2026-07-19_09-34-03",
+    "source_experiment_sha256": "9419176039cd59d00f52f2366036e0af47b3cdba77aae94f7c1922651292e5ba",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "xenium_lung",
+    "paper_model": "EfficientNet-B0",
+    "config": "configs/xenium_lung/effnet.json",
+    "entrypoint": "code_model_training/main2_xenium_patient.py",
+    "source_run": "result_vit_2026-07-23_18-26-04",
+    "source_experiment_sha256": "6a1ff30b28a4596de9273460fcf2506a52285fdc43dcd7f8b4fce7d784d83b1a",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "xenium_lung",
+    "paper_model": "ST-Net",
+    "config": "configs/xenium_lung/stnet.json",
+    "entrypoint": "code_model_training/main2_xenium_patient.py",
+    "source_run": "result_vit_2026-07-26_06-37-43",
+    "source_experiment_sha256": "9ba4dc525cc43730275f1babd0b3f553cdc1d7fd5ef34c62e26d0c4ef21d8fcb",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "xenium_lung",
+    "paper_model": "DeepSpaCE",
+    "config": "configs/xenium_lung/deepspace.json",
+    "entrypoint": "code_model_training/main2_xenium_patient.py",
+    "source_run": "result_vit_2026-07-27_16-05-42",
+    "source_experiment_sha256": "9eedbf456df4940ce42a4d589c7732ed64f77f1b457c2a992ad92cbd72896a7c",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "xenium_lung",
+    "paper_model": "HisToGene",
+    "config": "configs/xenium_lung/histogene.json",
+    "entrypoint": "code_model_training/main2_xenium_patient.py",
+    "source_run": "result_vit_2026-07-28_18-39-09",
+    "source_experiment_sha256": "80bc4e2793b571a753eb8fb58758faa044f5f501c10d4f5a5e551eb543819481",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "xenium_lung",
+    "paper_model": "TCGN",
+    "config": "configs/xenium_lung/tcgn.json",
+    "entrypoint": "code_model_training/main2_xenium_patient.py",
+    "source_run": "result_vit_2026-07-28_22-33-07",
+    "source_experiment_sha256": "86003329942b6bb0e681db9e6c482ab247052dbdcaaaa7ebe545ce1ae34b852e",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "xenium_lung",
+    "paper_model": "UNI",
+    "config": "configs/xenium_lung/uni.json",
+    "entrypoint": "code_model_training/main2_xenium_patient.py",
+    "source_run": "result_vit_2026-07-27_21-23-07",
+    "source_experiment_sha256": "4f51a15860fa58777e4badab000bed5a5a7b26c34990e5c5a42fc3c513167c2d",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "xenium_lung",
+    "paper_model": "STpath",
+    "config": "configs/xenium_lung/stpath.json",
+    "entrypoint": "code_model_training/main2_xenium_patient.py",
+    "source_run": "result_vit_2026-08-05_19-36-29",
+    "source_experiment_sha256": "e89b783d5083d47a25caede3d7414e8160cbeb6e7a6dd75081a6f946786c76af",
+    "status": "reconstructed STPath adapter; historical trainer missing"
+  },
+  {
+    "cohort": "xenium_lung",
+    "paper_model": "Stem",
+    "config": "configs/xenium_lung/stem.json",
+    "entrypoint": "code_model_training/stem_xenium_patient.py",
+    "source_run": "result_vit_2026-08-07_07-22-22",
+    "source_experiment_sha256": "973252c33636b9c9f90933046a42d08576f26030142a3a44cd5b95c1cd232379",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "xenium_lung",
+    "paper_model": "EffNet-C",
+    "config": "configs/xenium_lung/effnet_kd.json",
+    "entrypoint": "code_model_training/main2_xenium_patient_kd.py",
+    "source_run": "result_vit_2026-07-30_14-50-38",
+    "source_experiment_sha256": "7d54af2095b14f7b6be114b3b62fb1806297b1bcaf481f92c7879affc6a3f835",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "xenium_lung",
+    "paper_model": "ST-Net-C",
+    "config": "configs/xenium_lung/stnet_kd.json",
+    "entrypoint": "code_model_training/main2_xenium_patient_kd.py",
+    "source_run": "result_vit_2026-07-29_16-37-07",
+    "source_experiment_sha256": "a32c3af6b87fc18a49cdd5b896872f2bc886a42db06cb951ca06638ce1cfa5a4",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "xenium_lung",
+    "paper_model": "HisToGene-C",
+    "config": "configs/xenium_lung/histogene_kd.json",
+    "entrypoint": "code_model_training/main2_xenium_patient_kd.py",
+    "source_run": "result_vit_2026-07-29_16-44-01",
+    "source_experiment_sha256": "3fc208d3b5496fe65e18144452aadeac8cd00357e1c18446239d0c91888a3e44",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "xenium_lung",
+    "paper_model": "EffNet-3",
+    "config": "configs/xenium_lung/effnet_3.json",
+    "entrypoint": "code_model_training/main2_xenium_patient.py",
+    "source_run": "result_vit_2026-07-30_19-17-42",
+    "source_experiment_sha256": "79f0dc0eed9b7158cdf7642a2fc9aa63ce10149b1fc4108f907077f065e78e60",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "xenium_lung",
+    "paper_model": "EffNet-5",
+    "config": "configs/xenium_lung/effnet_5.json",
+    "entrypoint": "code_model_training/main2_xenium_patient.py",
+    "source_run": "result_vit_2026-07-30_15-40-31",
+    "source_experiment_sha256": "433e9b31fc290f4b18ddf145adc3d17df09806d6ebff01ed519144a584ade274",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "xenium_lung",
+    "paper_model": "EffNet-10",
+    "config": "configs/xenium_lung/effnet_10.json",
+    "entrypoint": "code_model_training/main2_xenium_patient.py",
+    "source_run": "result_vit_2026-07-30_22-38-20",
+    "source_experiment_sha256": "aabfdd503c4db1d4747b9a5819132f57ada3957376996ff52c9f009b02dd8776",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "xenium_lung",
+    "paper_model": "EffNet-20",
+    "config": "configs/xenium_lung/effnet_20.json",
+    "entrypoint": "code_model_training/main2_xenium_patient.py",
+    "source_run": "result_vit_2026-07-31_11-26-51",
+    "source_experiment_sha256": "706d4c6c600def8be00e1d692200c9d34bcf4095d628c504d616019f892d61a7",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "her2",
+    "paper_model": "EffNet-3",
+    "config": "configs/her2/effnet_3.json",
+    "entrypoint": "code_model_training/main2.py",
+    "source_run": "result_2026-02-13_20-56-48",
+    "source_experiment_sha256": "eb67578991add6a82222f5d7c133be6cc9740a642bc2d2dcf88c620cf3bf90e3",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "her2",
+    "paper_model": "EffNet-5",
+    "config": "configs/her2/effnet_5.json",
+    "entrypoint": "code_model_training/main2.py",
+    "source_run": "result_2026-02-13_21-22-49",
+    "source_experiment_sha256": "ded6d7216d62d7ff0fa16820459ad7f85c0d33588aa956bb74e9802a9d863f57",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "her2",
+    "paper_model": "EffNet-10",
+    "config": "configs/her2/effnet_10.json",
+    "entrypoint": "code_model_training/main2.py",
+    "source_run": "result_2026-02-14_01-14-43",
+    "source_experiment_sha256": "8083d626a2ea7127f71d558701a4bf90943d936a6278062cdcdeb2bba62d5269",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "her2",
+    "paper_model": "EffNet-20",
+    "config": "configs/her2/effnet_20.json",
+    "entrypoint": "code_model_training/main2.py",
+    "source_run": "result_2026-02-14_03-08-00",
+    "source_experiment_sha256": "7131ec5f4a11847095e3b414fde1d9f9f17fd9d67059de1734c183e8089dd128",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "hist2st",
+    "paper_model": "EffNet-3",
+    "config": "configs/hist2st/effnet_3.json",
+    "entrypoint": "code_model_training/main2.py",
+    "source_run": "result_2026-02-15_03-20-51",
+    "source_experiment_sha256": "54b846258faffd3defefdebbc51a4f5b6bc6a5055551c7612228d7f26b8bdd06",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "hist2st",
+    "paper_model": "EffNet-5",
+    "config": "configs/hist2st/effnet_5.json",
+    "entrypoint": "code_model_training/main2.py",
+    "source_run": "result_2026-02-15_03-26-52",
+    "source_experiment_sha256": "de789abd4dd6f7ef242ef9584f3bc50f122dd9f4edcc7d9b191921b552c60921",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "hist2st",
+    "paper_model": "EffNet-10",
+    "config": "configs/hist2st/effnet_10.json",
+    "entrypoint": "code_model_training/main2.py",
+    "source_run": "result_2026-02-15_12-18-35",
+    "source_experiment_sha256": "73af058389bcf3c794ab81ea97c5735f17a96ce44ec0c778fb2d2ed3a8e2b0f1",
+    "status": "archived configuration; current training source"
+  },
+  {
+    "cohort": "hist2st",
+    "paper_model": "EffNet-20",
+    "config": "configs/hist2st/effnet_20.json",
+    "entrypoint": "code_model_training/main2.py",
+    "source_run": "result_2026-02-15_08-46-03",
+    "source_experiment_sha256": "99c8f111e8c775ad6893c925d535d210ba833d5c1d54a054d040d4300c9f3fbc",
+    "status": "archived configuration; current training source"
+  }
+]

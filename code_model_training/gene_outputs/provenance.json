@@ -1,0 +1,22 @@
+{
+  "hist2st_845.npy": {
+    "gene_count": 845,
+    "sha256": "8bcebe3951097a06dc084206dc2ea7273e234f5cfe353b33add947cece4bb78f",
+    "source": "code_model_training/gene_outputs/hist2st_845.npy"
+  },
+  "her2.npy": {
+    "gene_count": 785,
+    "sha256": "c3492478d462c72796a2f9603302af8e0b34cb884cd55cbd864c193001c9402b",
+    "source": "code_model_training/gene_outputs/her2.npy"
+  },
+  "xenium_breast_patient.npy": {
+    "gene_count": 500,
+    "sha256": "61cfedf3b34075ab286858a570c7ce0231396e1c2a127afb33015c8905a694a4",
+    "source": "code_model_training/gene_outputs/xenium_breast_patient.npy"
+  },
+  "xenium_lung_patient.npy": {
+    "gene_count": 541,
+    "sha256": "1dc40d4477214219f0797c77c12c9126623534d25d008d5491a46fd863f7b221",
+    "source": "code_model_training/gene_outputs/xenium_lung_patient.npy"
+  }
+}

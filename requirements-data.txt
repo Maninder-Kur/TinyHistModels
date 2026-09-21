@@ -1,0 +1,3 @@
+# Optional: HER2 raw-image preparation, after the main requirements.
+# Keep NumPy 1.x compatibility with the training stack.
+opencv-python>=4.9,<4.12

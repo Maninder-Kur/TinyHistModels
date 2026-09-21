@@ -1,0 +1,22 @@
+# Python 3.10. Install matching PyTorch and torchsort wheels first; see README.
+# Versions below are from the environment used for release smoke checks,
+# not a recovered lockfile of every historical training run.
+torch==2.6.0
+torchvision==0.21.0
+torchsort==0.1.10
+numpy==1.26.4
+scipy==1.15.3
+pandas==2.0.3
+h5py==3.15.1
+anndata==0.11.4
+scanpy==1.11.5
+scikit-learn==1.7.2
+matplotlib==3.10.7
+timm==1.0.22
+einops==0.4.1
+Pillow==11.3.0
+tqdm==4.67.1
+huggingface-hub==1.0.1
+safetensors==0.6.2
+pytorch-lightning==2.5.6
+torchmetrics==1.8.2

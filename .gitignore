@@ -1,0 +1,41 @@
+# Downloaded data and model weights
+/data/
+/dataset_new/
+/assets/
+*.h5
+*.h5ad
+*.hdf5
+*.tif
+*.tiff
+*.svs
+*.pth
+*.pt
+*.ckpt
+*.bin
+*.safetensors
+*.npz
+*.npy
+!code_model_training/gene_outputs/*.npy
+
+# Training artifacts
+/outputs/
+modelResults/
+log_outs/
+embedding_cache/
+wandb/
+*.out
+*.log
+*.pdf
+*.ipynb
+
+# Local environments, caches and credentials
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+.ipynb_checkpoints/
+.pytest_cache/
+.DS_Store
