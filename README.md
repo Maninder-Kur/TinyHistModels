@@ -4,7 +4,7 @@ Code for **A Scale-Aware Study of Spatial Gene Expression Prediction from Histol
 
 ## Setup
 
-Python 3.10. Package versions in `requirements.txt` are taken from our `isbi` environment.
+Python 3.10. Package versions in `requirements.txt`.
 
 ```bash
 # Skip this line if the isbi environment already exists.
