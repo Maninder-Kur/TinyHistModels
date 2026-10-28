@@ -1,0 +1,27 @@
+{
+  "dataset": "Hist2ST",
+  "sample_id": "23287_C1",
+  "patient_id": "23287",
+  "patch_index": 0,
+  "spot_id": "11x17",
+  "split": "fold_5 validation patient",
+  "fold_5_validation_patients": [
+    "23287",
+    "23506",
+    "23810",
+    "24044"
+  ],
+  "selection": "First patch of the first fold-5 held-out slide; not selected by metric score.",
+  "model": "EfficientNetTinyStudent",
+  "phi": -15.87,
+  "num_genes": 845,
+  "scale_factor": 1000000,
+  "checkpoint": "weights/effnet5_hist2st_fold5.pth",
+  "source_run": "result_2026-02-15_03-26-52",
+  "source_experiment": "hist2st_845_EfficientNetTinyStudent_no_teacher_mse_95_new_data_split_patients_wise",
+  "checkpoint_sha256": "70222c52fb328ac15ab84cd1090c6937b16bd8ec79ca22ec404ee91bdf1a82c1",
+  "patch_sha256": "d9328bdfbabf0c369cc99df9b7034d1b4da26457f2630318bb6d746e4240583b",
+  "expression_sha256": "1fc98794db4c482dc2865d43d68d5960dbc2943ca61c1ded0cdea3b127f6059e",
+  "data_source": "https://data.mendeley.com/datasets/29ntw7sh4r/2",
+  "data_license": "CC BY 4.0"
+}

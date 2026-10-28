@@ -1,0 +1,23 @@
+{
+  "result_path": "outputs/her2/histogene_no_teacher",
+  "seed": 123,
+  "batch_size": 128,
+  "learning_rate": 0.0001,
+  "epochs": 200,
+  "model": "TinyHisToGene",
+  "dataset_name": "her2",
+  "genes": "code_model_training/gene_outputs",
+  "dataset_path": "data/her2",
+  "optimizer": "Adam",
+  "loss_fn": "mse",
+  "use_kd": false,
+  "k_folds": 5,
+  "lambda_reg": 0.1,
+  "lr_patience": 5,
+  "lr_factor": 0.1,
+  "min_lr": 1e-08,
+  "early_stopping_patience": 30,
+  "weight_decay": 1e-05,
+  "scale_factor": 1000000,
+  "pretrained": false
+}

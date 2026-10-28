@@ -38,4 +38,9 @@ venv/
 !.env.example
 .ipynb_checkpoints/
 .pytest_cache/
+.ruff_cache/
 .DS_Store
+
+# Bundled single-patch demo
+!demo/predict_patch.ipynb
+!demo/weights/effnet5_hist2st_fold5.pth

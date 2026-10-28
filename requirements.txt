@@ -1,6 +1,5 @@
-# Python 3.10. Install matching PyTorch and torchsort wheels first; see README.
-# Versions below are from the environment used for release smoke checks,
-# not a recovered lockfile of every historical training run.
+# Python 3.10; versions from the isbi environment.
+# Install matching torch/torchsort wheels first (README.md).
 torch==2.6.0
 torchvision==0.21.0
 torchsort==0.1.10
@@ -20,3 +19,5 @@ huggingface-hub==1.0.1
 safetensors==0.6.2
 pytorch-lightning==2.5.6
 torchmetrics==1.8.2
+torch-geometric==2.7.0
+ipykernel==6.30.1

@@ -33,7 +33,7 @@ class IDTokenizer(TokenizerBase):
         if isinstance(input, str):
             return self.token_aligner[input] if input in self.token_aligner else "<pad>"
         elif isinstance(input, list):
-            return [self.token_aligner[token] if token in self.token_aligner else "<pad>" for token in sequence]
+            return [self.token_aligner[token] if token in self.token_aligner else "<pad>" for token in input]
 
     def encode(self, input, align_first=False):
         if align_first:

@@ -2,6 +2,8 @@ import os
 from functools import cache
 from pathlib import Path
 
+# gene_voc = {
+# }
 
 
 # technology
