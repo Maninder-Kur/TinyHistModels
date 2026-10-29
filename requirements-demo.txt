@@ -1,2 +1,0 @@
-# Notebook UI; install after requirements.txt.
-jupyterlab>=4,<5
