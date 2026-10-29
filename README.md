@@ -62,13 +62,3 @@ python scripts/train.py --config configs/her2/effnet_kd.json \
 ```
 
 The teacher run must contain `fold_1/best_model.pth` through `fold_5/best_model.pth` and use the same folds and gene order. [Configuration guide](configs/README.md).
-
-## Supplementary models
-
-`configs/supplementary/` contains the earlier zero-input STPath and compact models trained without a teacher. [Details](configs/supplementary/README.md).
-
-## Demo
-
-[demo/predict_patch.ipynb](demo/predict_patch.ipynb) includes an EffNet-5 fold-5 checkpoint, one held-out Hist2ST patch and its gene counts. It prints patch-wise Pearson, Spearman, MAE, MSE and MAPE. [Run the demo](demo/README.md).
-
-Only training validation and this single-patch demo are included. There are no standalone evaluation or significance-analysis scripts. Third-party sources are listed in [THIRD_PARTY.md](THIRD_PARTY.md).
