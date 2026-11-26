@@ -13,6 +13,7 @@
 | `stem` | Diffusion model conditioned on frozen UNI features |
 | `stpath` | Spatial windows, pretrained STFM and its gene prediction head |
 | `stpath_small_scratch` | Random compact spatial transformer and MLP head; frozen pretrained GigaPath |
+| `stpath_small_flash_scratch` | Same compact spatial model; frozen pretrained GigaPath-Flash tile encoder |
 | `gigapath_flash` | Small pretrained GigaPath tile encoder and linear head |
 
 ## Pretrained files
@@ -22,11 +23,11 @@ Download each encoder separately and accept its upstream access terms.
 | Model | Download | File under `assets/` |
 | --- | --- | --- |
 | UNI / Stem | [UNI](https://huggingface.co/MahmoodLab/UNI) | `uni/pytorch_model.bin` |
-| All STPath variants | [GigaPath](https://huggingface.co/prov-gigapath/prov-gigapath) | `gigapath/pytorch_model.bin` |
+| STPath / STPathZero / STPathSmall / STPathSmallScratch | [GigaPath](https://huggingface.co/prov-gigapath/prov-gigapath) | `gigapath/pytorch_model.bin` |
 | STPath / STPathZero | [STPath](https://huggingface.co/tlhuang/STPath) | `stpath/stfm.pth` |
-| GigaPathFlash | [GigaPath-Flash](https://huggingface.co/prov-gigapath/prov-gigapath-flash) | `gigapath_flash/pytorch_model.bin` |
+| GigaPathFlash / STPathSmallFlashScratch | [GigaPath-Flash](https://huggingface.co/prov-gigapath/prov-gigapath-flash) | `gigapath_flash/pytorch_model.bin` |
 
-`STPathSmallScratch` does not load `stfm.pth`. Its trainable part uses width 512, one spatial block, four attention heads and a 1536-unit MLP head. GigaPathFlash uses only the tile encoder; its slide encoder and FlashAttention package are not required.
+`STPathSmallScratch` and `STPathSmallFlashScratch` do not load `stfm.pth`. Their trainable part uses width 512, one spatial block, four attention heads and a 1536-unit MLP head. GigaPathFlash and STPathSmallFlashScratch use only the tile encoder; the GigaPath-Flash slide encoder and FlashAttention package are not required.
 
 ## Training settings
 

@@ -2,7 +2,7 @@
 
 Use `configs/<cohort>/<model>.json`. Cohorts: `her2`, `hist2st`, `xenium_breast`, `xenium_lung`.
 
-- Baselines: `stnet`, `deepspace`, `histogene`, `effnet`, `tcgn`, `uni`, `stem`, `stpath`, `stpath_small_scratch`, `gigapath_flash`.
+- Baselines: `stnet`, `deepspace`, `histogene`, `effnet`, `tcgn`, `uni`, `stem`, `stpath`, `stpath_small_scratch`, `stpath_small_flash_scratch`, `gigapath_flash`.
 - THItoGene: `thitogene` for HER2 and Hist2ST.
 - EfficientNet scaling: `effnet_3`, `effnet_5`, `effnet_10`, `effnet_20`. `effnet` is the full model.
 - KD: `stnet_kd`, `histogene_kd`, `effnet_kd`.

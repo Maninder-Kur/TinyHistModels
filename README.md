@@ -33,13 +33,15 @@ Keep datasets and pretrained encoders outside Git. Ordered gene lists are in `co
 
 ## Models
 
-ST-Net, DeepSpaCE, HisToGene, EfficientNet-B0, TCGN, THItoGene, UNI, Stem, STPath, STPathSmallScratch and GigaPathFlash. We also include scaled EfficientNet and knowledge-distillation models.
+ST-Net, DeepSpaCE, HisToGene, EfficientNet-B0, TCGN, THItoGene, UNI, Stem, STPath, STPathSmallScratch, STPathSmallFlashScratch and GigaPathFlash. We also include scaled EfficientNet and knowledge-distillation models.
 
 - **STPath:** real spatial coordinates, neighbouring patches, masked gene input and organ/technology tokens.
 - **STPathSmallScratch:** frozen pretrained GigaPath encoder with a randomly initialized compact spatial transformer and regression head. No STFM checkpoint.
+- **STPathSmallFlashScratch:** the same compact spatial model with a frozen GigaPath-Flash tile encoder.
 - **GigaPathFlash:** pretrained small tile encoder with a linear gene-regression head.
 
 See [model details and weight paths](docs/MODELS.md).
+The Hist2ST notebooks are in [demo/](demo/README.md).
 
 ## Training
 
@@ -49,6 +51,7 @@ Run from the repository root:
 python scripts/train.py --config configs/hist2st/effnet_5.json
 python scripts/train.py --config configs/hist2st/stpath.json
 python scripts/train.py --config configs/hist2st/stpath_small_scratch.json
+python scripts/train.py --config configs/hist2st/stpath_small_flash_scratch.json
 python scripts/train.py --config configs/her2/gigapath_flash.json
 ```
 

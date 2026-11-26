@@ -60,6 +60,7 @@ def entrypoint(params: dict) -> str:
         "STPathZero",
         "STPathSmall",
         "STPathSmallScratch",
+        "STPathSmallFlashScratch",
         "GigaPathFlash",
         "EfficientNetTinyStudent",
     }:
@@ -98,6 +99,12 @@ def check_inputs(params: dict) -> list[str]:
     elif params["model"] == "StemUNI":
         weights.append(Path(params["uni_checkpoint"]))
     elif params["model"] == "GigaPathFlash":
+        weights.append(
+            assets
+            / "gigapath_flash"
+            / params.get("gigapath_flash_ckpt", "pytorch_model.bin")
+        )
+    elif params["model"] == "STPathSmallFlashScratch":
         weights.append(
             assets
             / "gigapath_flash"

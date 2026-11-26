@@ -1282,9 +1282,10 @@ class STPathSmallModel(nn.Module):
             if images is None:
                 raise ValueError("Provide either images or precomputed img_features")
             img_features = self._encode_images(images)
-        if img_features.ndim != 2 or img_features.shape[1] != 1536:
+        feature_dim = self.image_embed.in_features
+        if img_features.ndim != 2 or img_features.shape[1] != feature_dim:
             raise ValueError(
-                f"Expected image features [N, 1536], got {tuple(img_features.shape)}"
+                f"Expected image features [N, {feature_dim}], got {tuple(img_features.shape)}"
             )
         n_spots = img_features.shape[0]
         device = img_features.device
@@ -1449,3 +1450,178 @@ class STPathSmallScratchModel(STPathSmallModel):
         print(
             f"[STPathSmallScratchModel] Initialized with random compact weights, frozen GigaPath, and no STFM checkpoint: total={total:,}, trainable={trainable:,}, panel_genes={self.num_genes}"
         )
+
+
+class STPathSmallFlashScratchModel(STPathSmallModel):
+    """STPath Small scratch with a frozen GigaPath-Flash image encoder.
+
+    This class follows STPathSmallScratchModel's constructor and shares its
+    forward pass, mask input, metadata conditioning, spatial block, panel
+    head and frozen-encoder training mode through STPathSmallModel.
+    Flash supplies 384 features, so the image projection takes 384 inputs.
+    Only the Flash encoder loads pretrained weights; all downstream layers
+    are initialized from scratch. Pass gigapath_flash_ckpt=None only when
+    supplying precomputed Flash features, as in the demo notebook.
+    """
+
+    image_encoder_name = "GigaPath-Flash"
+
+    def __init__(
+        self,
+        panel_gene_names,
+        assets_dir="./assets",
+        gigapath_flash_ckpt="pytorch_model.bin",
+        organ_type=None,
+        tech_type="Visium",
+        freeze_gigapath=True,
+        head_hidden_dim=1536,
+        dropout=0.1,
+        stpath_small_d_model=512,
+        stpath_small_layers=1,
+        stpath_small_heads=4,
+        stpath_small_mlp_ratio=2.0,
+    ):
+        nn.Module.__init__(self)
+
+        if not freeze_gigapath:
+            raise ValueError("STPathSmallFlashScratchModel requires freeze_gigapath=True")
+        if panel_gene_names is None or len(panel_gene_names) == 0:
+            raise ValueError(
+                "STPathSmallFlashScratchModel requires panel_gene_names so its output "
+                "head matches the dataset .npy gene order."
+            )
+        if int(stpath_small_d_model) != 512:
+            raise ValueError("stpath_small_d_model must be 512")
+        if int(stpath_small_layers) != 1:
+            raise ValueError("stpath_small_layers must be 1")
+        if int(stpath_small_heads) != 4:
+            raise ValueError("stpath_small_heads must be 4")
+        if float(stpath_small_mlp_ratio) != 2.0:
+            raise ValueError("stpath_small_mlp_ratio must be 2.0")
+
+        from stpath.model.nn_utils.config import ModelConfig
+        from stpath.model.encoder.spatial_transformer import SpatialTransformer
+        from stpath.tokenization import IDTokenizer, TokenizerTools
+
+        self.panel_gene_names = [str(gene) for gene in panel_gene_names]
+        self.num_genes = len(self.panel_gene_names)
+        self.organ_type = organ_type
+        self.tech_type = tech_type
+        self._d_model = 512
+
+        # Only categorical metadata tokenizers are needed.  There is no gene
+        # tokenizer because this model never consumes measured gene tokens or
+        # transfers the pretrained STFM mask embedding.
+        self.tokenizer = TokenizerTools(
+            ge_tokenizer=None,
+            image_tokenizer=None,
+            tech_tokenizer=IDTokenizer(id_type="tech"),
+            specie_tokenizer=IDTokenizer(id_type="specie"),
+            organ_tokenizer=IDTokenizer(id_type="organ"),
+            cancer_anno_tokenizer=None,
+            domain_anno_tokenizer=None,
+        )
+        self._organ_id = STPathSmallModel._encode_id(
+            self.tokenizer.organ_tokenizer, organ_type, default="Others"
+        )
+        self._tech_id = STPathSmallModel._encode_id(
+            self.tokenizer.tech_tokenizer, tech_type, default=None
+        )
+        print(
+            f"[{type(self).__name__}] Conditioning: organ={organ_type!r} "
+            f"(id={self._organ_id}), tech={tech_type!r} (id={self._tech_id})"
+        )
+
+        self._has_image_backbone = gigapath_flash_ckpt is not None
+        if self._has_image_backbone:
+            self.gigapath_backbone = self._build_image_backbone(
+                assets_dir, gigapath_flash_ckpt
+            )
+            self.image_feature_dim = int(self.gigapath_backbone.num_features)
+        else:
+            self.gigapath_backbone = nn.Identity()
+            self.image_feature_dim = 384
+        for parameter in self.gigapath_backbone.parameters():
+            parameter.requires_grad = False
+        self.gigapath_backbone.eval()
+
+        spatial_config = ModelConfig(
+            d_input=self._d_model,
+            d_model=self._d_model,
+            n_layers=1,
+            n_heads=4,
+            dropout=dropout,
+            attn_dropout=dropout,
+            act="gelu",
+            mlp_ratio=2.0,
+        )
+        self.spatial_transformer = SpatialTransformer(spatial_config)
+        self.image_embed = nn.Linear(self.image_feature_dim, self._d_model)
+        self.tech_embed = nn.Embedding(
+            self.tokenizer.tech_tokenizer.n_tokens, self._d_model
+        )
+        self.organ_embed = nn.Embedding(
+            self.tokenizer.organ_tokenizer.n_tokens, self._d_model
+        )
+        self.mask_gene_embed = nn.Parameter(torch.empty(self._d_model))
+        nn.init.normal_(self.mask_gene_embed, mean=0.0, std=0.02)
+
+        self.task_head = nn.Sequential(
+            nn.Linear(self._d_model, int(head_hidden_dim)),
+            nn.LayerNorm(int(head_hidden_dim)),
+            nn.GELU(),
+            nn.Dropout(dropout),
+            nn.Linear(int(head_hidden_dim), self.num_genes),
+        )
+
+        total = sum(parameter.numel() for parameter in self.parameters())
+        trainable = sum(
+            parameter.numel()
+            for parameter in self.parameters()
+            if parameter.requires_grad
+        )
+        feature_source = (
+            f"frozen {self.image_encoder_name}"
+            if self._has_image_backbone
+            else "precomputed Flash embeddings"
+        )
+        print(
+            f"[{type(self).__name__}] Initialized with random compact weights, "
+            f"{feature_source} ({self.image_feature_dim} features), "
+            "and no STFM checkpoint: "
+            f"total={total:,}, trainable={trainable:,}, "
+            f"panel_genes={self.num_genes}"
+        )
+
+    @staticmethod
+    def _build_image_backbone(assets_dir, checkpoint):
+        checkpoint_path = os.path.join(assets_dir, "gigapath_flash", checkpoint)
+        if not os.path.isfile(checkpoint_path):
+            raise FileNotFoundError(f"GigaPath-Flash checkpoint not found: {checkpoint_path}")
+
+        repo_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "prov-gigapath")
+        encoder_path = os.path.join(repo_path, "gigapath", "tile_encoder.py")
+        if not os.path.isfile(encoder_path):
+            raise FileNotFoundError(f"Local Flash tile encoder not found: {encoder_path}")
+        if repo_path not in sys.path:
+            sys.path.insert(0, repo_path)
+        try:
+            from gigapath import tile_encoder
+        except ImportError as exc:
+            raise ImportError(f"Could not import the local Flash encoder: {exc}") from exc
+
+        backbone = tile_encoder.gigapath_tile_enc_dinov2s()
+        state_dict = torch.load(checkpoint_path, map_location="cpu", weights_only=True)
+        if isinstance(state_dict, dict) and isinstance(state_dict.get("model"), dict):
+            state_dict = state_dict["model"]
+        backbone.load_state_dict(state_dict, strict=True)
+        print(f"GigaPath-Flash pretrained weights loaded from: {checkpoint_path}")
+        return backbone
+
+    def _encode_images(self, images):
+        if not self._has_image_backbone:
+            raise RuntimeError(
+                "Image inference needs GigaPath-Flash weights. Provide "
+                "gigapath_flash_ckpt or pass precomputed img_features."
+            )
+        return super()._encode_images(images)

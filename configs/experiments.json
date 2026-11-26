@@ -645,6 +645,15 @@
   },
   {
     "cohort": "her2",
+    "paper_model": "STPathSmallFlashScratch",
+    "config": "configs/her2/stpath_small_flash_scratch.json",
+    "entrypoint": "code_model_training/main2.py",
+    "group": "baseline",
+    "source_config": "modelResults/her2_breast_stpath_small_flash_scratch/result_2026-11-15_21-51-43/experiment_info.json",
+    "source_experiment_sha256": "442a5dc15a4aa5277940421dce69501dea3189015250febec999e38c32f46f6a"
+  },
+  {
+    "cohort": "her2",
     "paper_model": "GigaPathFlash",
     "config": "configs/her2/gigapath_flash.json",
     "entrypoint": "code_model_training/main2.py",
@@ -698,6 +707,15 @@
     "group": "baseline",
     "source_config": "modelResults/hist2st_breast_stpath_small_scratch/result_2026-10-19_23-25-45/experiment_info.json",
     "source_experiment_sha256": "91c8f91d271980bd70a252aa7beed9789b6817bacdfc51b640c10996efc7e061"
+  },
+  {
+    "cohort": "hist2st",
+    "paper_model": "STPathSmallFlashScratch",
+    "config": "configs/hist2st/stpath_small_flash_scratch.json",
+    "entrypoint": "code_model_training/main2.py",
+    "group": "baseline",
+    "source_config": "modelResults/hist2st_breast_stpath_small_flash_scratch/result_2026-11-15_21-58-44/experiment_info.json",
+    "source_experiment_sha256": "bf8cbd8a43c1e9a38c0dcde94062cb1b54c76758d4d888936a187f819b33ecb3"
   },
   {
     "cohort": "hist2st",
@@ -757,6 +775,15 @@
   },
   {
     "cohort": "xenium_breast",
+    "paper_model": "STPathSmallFlashScratch",
+    "config": "configs/xenium_breast/stpath_small_flash_scratch.json",
+    "entrypoint": "code_model_training/main2_xenium_patient.py",
+    "group": "baseline",
+    "source_config": "modelResults/xenium_breast_patient_stpath_small_flash_scratch/result_vit_2026-11-16_00-01-31/experiment_info.json",
+    "source_experiment_sha256": "4eeacdfd0be9705f96fb1ae9cc7fe08aa97b4a23c2d04be17d47a581bbfa02c9"
+  },
+  {
+    "cohort": "xenium_breast",
     "paper_model": "GigaPathFlash",
     "config": "configs/xenium_breast/gigapath_flash.json",
     "entrypoint": "code_model_training/main2_xenium_patient.py",
@@ -810,6 +837,15 @@
     "group": "baseline",
     "source_config": "modelResults/xenium_lung_patient_stpath_small_scratch/result_vit_2026-10-19_20-05-28/experiment_info.json",
     "source_experiment_sha256": "f8f86dd30d3c7e20fd789c2161c2225d130a526104a125df40fd012957d75542"
+  },
+  {
+    "cohort": "xenium_lung",
+    "paper_model": "STPathSmallFlashScratch",
+    "config": "configs/xenium_lung/stpath_small_flash_scratch.json",
+    "entrypoint": "code_model_training/main2_xenium_patient.py",
+    "group": "baseline",
+    "source_config": "modelResults/xenium_lung_patient_stpath_small_flash_scratch/result_vit_2026-11-16_00-44-26/experiment_info.json",
+    "source_experiment_sha256": "f88c641b0ff81862078fa74bcd88ccd9149ac989029e1175e1fb81e3485d78dc"
   },
   {
     "cohort": "xenium_lung",

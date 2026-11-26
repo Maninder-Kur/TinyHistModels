@@ -43,4 +43,7 @@ venv/
 
 # Bundled single-patch demo
 !demo/predict_patch.ipynb
+!demo/predict_stpath_small_flash.ipynb
 !demo/weights/effnet5_hist2st_fold5.pth
+!demo/weights/stpath_small_flash_hist2st_fold3_head.pth
+!demo/sample/stpath_flash_window.npz

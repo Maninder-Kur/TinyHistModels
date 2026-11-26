@@ -10,6 +10,6 @@
 
 Paths above are under `code_model_training/`. Local changes cover import paths, device handling and the gene-regression wrappers. Original notices are retained.
 
-Pretrained encoder weights are downloaded separately; see [weight links](docs/MODELS.md). The only bundled checkpoint is the project's own compact EffNet-5 demo model. The demo sample is from [Mendeley Data v2](https://data.mendeley.com/datasets/29ntw7sh4r/2), CC BY 4.0.
+Pretrained encoder weights are downloaded separately; see [weight links](docs/MODELS.md). Bundled checkpoints are the project's compact EffNet-5 model and the trained STPath Small–Flash spatial layers. The demo sample is from [Mendeley Data v2](https://data.mendeley.com/datasets/29ntw7sh4r/2), CC BY 4.0.
 
 A project license has not been selected. Confirm permission for the upstream components without license files before public distribution.

@@ -46,6 +46,7 @@ from models import (
     STPathOriginalModel,
     STPathSmallModel,
     STPathSmallScratchModel,
+    STPathSmallFlashScratchModel,
 )
 from model_eff_net_versions import EfficientNetTinyStudent
 
@@ -76,6 +77,7 @@ def main():
         "stpathtiny",
         "stpathsmallscratch",
         "stpathscratch",
+        "stpathsmallflashscratch",
     }
     gene_names = None
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
@@ -234,11 +236,17 @@ def main():
             logger.info(
                 f"UNI initialized with {sum((p.numel() for p in model.parameters() if p.requires_grad)):,} trainable parameters."
             )
-        elif model_name in {"stpathsmallscratch", "stpathscratch"}:
-            model = STPathSmallScratchModel(
+        elif model_name in {"stpathsmallscratch", "stpathscratch", "stpathsmallflashscratch"}:
+            is_flash = model_name == "stpathsmallflashscratch"
+            model_class = STPathSmallFlashScratchModel if is_flash else STPathSmallScratchModel
+            checkpoint_kwargs = (
+                {"gigapath_flash_ckpt": params["gigapath_flash_ckpt"]}
+                if is_flash else {"gigapath_ckpt": params["gigapath_ckpt"]}
+            )
+            model = model_class(
                 panel_gene_names=gene_names,
                 assets_dir=params["assets_dir"],
-                gigapath_ckpt=params["gigapath_ckpt"],
+                **checkpoint_kwargs,
                 freeze_gigapath=params["freeze_gigapath"],
                 organ_type=params["organ_type"],
                 tech_type=params["tech_type"],
@@ -250,7 +258,7 @@ def main():
                 stpath_small_mlp_ratio=params.get("stpath_small_mlp_ratio", 2.0),
             )
             logger.info(
-                f"STPathSmallScratch initialized with {sum((p.numel() for p in model.parameters() if p.requires_grad)):,} trainable parameters."
+                f"{model_class.__name__} initialized with {sum((p.numel() for p in model.parameters() if p.requires_grad)):,} trainable parameters."
             )
         elif model_name in {"stpathsmall", "stpathtiny"}:
             model = STPathSmallModel(
