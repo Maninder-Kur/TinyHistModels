@@ -40,8 +40,6 @@ ST-Net, DeepSpaCE, HisToGene, EfficientNet-B0, TCGN, THItoGene, UNI, Stem, STPat
 - **STPathSmallFlashScratch:** the same compact spatial model with a frozen GigaPath-Flash tile encoder.
 - **GigaPathFlash:** pretrained small tile encoder with a linear gene-regression head.
 
-See [model details and weight paths](docs/MODELS.md).
-The Hist2ST notebooks are in [demo/](demo/README.md).
 
 ## Training
 
@@ -64,4 +62,4 @@ python scripts/train.py --config configs/her2/effnet_kd.json \
   --teacher-run outputs/her2/effnet/YOUR_RUN
 ```
 
-The teacher run must contain `fold_1/best_model.pth` through `fold_5/best_model.pth` and use the same folds and gene order. [Configuration guide](configs/README.md).
+[Configuration guide](configs/README.md).
