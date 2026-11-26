@@ -1,6 +1,6 @@
 # TinyHistModels
 
-Code for **A Scale-Aware Study of Spatial Gene Expression Prediction from Histology Images**.
+Code for **Scaling Models for Predicting Gene Expression from Histology Images**.
 
 ## Setup
 
