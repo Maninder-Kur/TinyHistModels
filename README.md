@@ -36,7 +36,7 @@ Keep datasets and pretrained encoders outside Git. Ordered gene lists are in `co
 ST-Net, DeepSpaCE, HisToGene, EfficientNet-B0, TCGN, THItoGene, UNI, Stem, STPath, STPathSmallScratch, STPathSmallFlashScratch and GigaPathFlash. We also include scaled EfficientNet and knowledge-distillation models.
 
 - **STPath:** real spatial coordinates, neighbouring patches, masked gene input and organ/technology tokens.
-- **STPathSmallScratch:** frozen pretrained GigaPath encoder with a randomly initialized compact spatial transformer and regression head. No STFM checkpoint.
+- **STPathSmallScratch:** frozen pretrained GigaPath encoder with a randomly initialized compact spatial transformer and regression head.
 - **STPathSmallFlashScratch:** the same compact spatial model with a frozen GigaPath-Flash tile encoder.
 - **GigaPathFlash:** pretrained small tile encoder with a linear gene-regression head.
 
